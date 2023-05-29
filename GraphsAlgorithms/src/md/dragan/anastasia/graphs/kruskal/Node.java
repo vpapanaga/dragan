@@ -15,6 +15,7 @@ public class Node {
         return value;
     }
 
+    // implementez metoda equals pentru a compara două obiecte de tipul Node
     @Override
     public boolean equals(Object obj)
     {

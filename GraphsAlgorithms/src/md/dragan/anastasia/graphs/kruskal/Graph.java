@@ -3,16 +3,24 @@ package md.dragan.anastasia.graphs.kruskal;
 import java.util.*;
 
 public class Graph {
-    private List<Edge> graphEdges;
+    /*
+    Clasa graf este definită prin:
+    - lista de noduri (nodes)
+    - lista de arcuri (edges)
+    care interconectează două  noduri
+     */
     private List<Node> nodes;
+    private List<Edge> edges;
 
+    // Ccnstructorul fără parametri initializează lista de noduri și arcuri
     public Graph() {
-        graphEdges = new ArrayList<Edge>();
+        edges = new ArrayList<Edge>();
         nodes = new ArrayList<Node>();
     }
 
+    // Metoda care initiază graful cu date initiale
     public void initiateDemoInformation() {
-        graphEdges = new ArrayList<Edge>(
+        edges = new ArrayList<Edge>(
                 Arrays.asList(
                         new Edge(new Node(0), new Node(1), 4),
                         new Edge(new Node(0), new Node(7), 8),
@@ -31,14 +39,14 @@ public class Graph {
                 )
         );
     }
-    // This method will implement reading of the graph from keyboard
+    // Această metodă are ca scop crearea unui graf de la tastatura
     public void readInfo() {
 
     }
 
-    //
+    // Această metodă sortează arcurile graful după ponderea arcurilor
     public void sortWeigth() {
-        graphEdges.sort(new Comparator<Edge>() {
+        edges.sort(new Comparator<Edge>() {
             @Override public int compare(Edge o1, Edge o2)
             {
                 return o1.weight - o2.weight;
@@ -46,8 +54,9 @@ public class Graph {
         });
     }
 
+    // Această metodă sortează arcurile grafului după nodul sursă
     public void sortSource() {
-        graphEdges.sort(new Comparator<Edge>() {
+        edges.sort(new Comparator<Edge>() {
             @Override public int compare(Edge o1, Edge o2)
             {
                 return o1.source.getValue() - o2.source.getValue();
@@ -55,8 +64,9 @@ public class Graph {
         });
     }
 
+    // Această metodă sortează arcurile grafului după nodul destinație
     public void sortDestination() {
-        graphEdges.sort(new Comparator<Edge>() {
+        edges.sort(new Comparator<Edge>() {
             @Override public int compare(Edge o1, Edge o2)
             {
                 return o1.destination.getValue() - o2.destination.getValue();
@@ -64,29 +74,32 @@ public class Graph {
         });
     }
 
-    // Display the number of edges in Graph
+    // Această metodă afișează numărul de arcuri din graf
     public int getNumberOfEdges() {
-        return graphEdges.size();
+        return edges.size();
     }
 
+    // Această metodă întoarce liista  de arcuri din graf
     public List<Edge> getEdges() {
-        return  graphEdges;
+        return edges;
     }
 
+    // Această metodă adaugă un arc  nou în graf
     public void addEdge(Edge edge) {
-        graphEdges.add(edge);
+        edges.add(edge);
         updateNodes();
     }
 
 
-    // Get the number of nodes  in the graph
+    // Această metodă afișează  numărul de noduri din graf
     public int getNumberOfNodes() {
        return this.getNodes().size();
     }
 
+    // Această metodă întoarce lista unică de noduri din Graf în baza arcurilor definite.
     public List<Node> getNodes() {
-        if ((nodes.size() == 0) && (graphEdges!=null) && (graphEdges.size()>0)) {
-            for (Edge edge: graphEdges) {
+        if ((nodes.size() == 0) && (edges !=null) && (edges.size()>0)) {
+            for (Edge edge: edges) {
                 if (!nodes.contains(edge.source)) {
                     nodes.add(edge.source);
                 }
@@ -98,10 +111,11 @@ public class Graph {
         return nodes;
     }
 
+    // Această metodă recalculează numărul de noduri  în baza arcurilor introduse
     private void updateNodes() {
-        if ((graphEdges!=null) && (graphEdges.size()>0)) {
+        if ((edges !=null) && (edges.size()>0)) {
             nodes = new ArrayList<Node>();
-            for (Edge edge: graphEdges) {
+            for (Edge edge: edges) {
                 if (!nodes.contains(edge.source)) {
                     nodes.add(edge.source);
                 }
@@ -111,7 +125,7 @@ public class Graph {
             }
         }
     }
-    // Get the number of nodes  in the graph
+    // Această metodă verifică dacă graful contine deja un nod.
     public boolean containsNode(Node node) {
         if (getNodes()==null) {
             return false;
@@ -120,9 +134,10 @@ public class Graph {
     }
 
 
+    // Această metodă afisează nodurile, arcurile, ponderea din graf
     public void print() {
-        if ((graphEdges!=null) && (graphEdges.size()>0)) {
-            for (Edge edge: graphEdges) {
+        if ((edges !=null) && (edges.size()>0)) {
+            for (Edge edge: edges) {
                 System.out.println(edge);
             }
         } else {

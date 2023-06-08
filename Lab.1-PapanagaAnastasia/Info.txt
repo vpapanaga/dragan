@@ -1,0 +1,14 @@
+------ Informatie despre stea ------------
+Soare
+334453455.4
+3
+------- Informatii Despre Planete --------
+------- Planeta 1 ------------------------
+Mercur
+234234
+------- Planeta 2 ------------------------
+Venus
+3454345
+------- Planeta 3 ------------------------
+Pamant
+23423232

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/GraphsAlgorithms/GraphsAlgorithms.iml" filepath="$PROJECT_DIR$/GraphsAlgorithms/GraphsAlgorithms.iml" />
+      <module fileurl="file://$PROJECT_DIR$/OOPPrinciples/OOPPrinciples.iml" filepath="$PROJECT_DIR$/OOPPrinciples/OOPPrinciples.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/dragan.iml" filepath="$PROJECT_DIR$/.idea/dragan.iml" />
+    </modules>
+  </component>
+</project>

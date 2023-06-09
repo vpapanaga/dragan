@@ -1,4 +1,4 @@
-package md.papanaga.usm.tap.laborator1;
+package md.papanaga.usm.tap;
 
 import md.papanaga.usm.tap.laborator1.Planeta;
 import md.papanaga.usm.tap.laborator1.Stea;
